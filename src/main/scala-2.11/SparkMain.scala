@@ -11,6 +11,7 @@ object SparkMain {
     val conf = new SparkConf()
       .setMaster("mesos://mesos-m1.c.amiable-might-155515.internal:5050")
       .setAppName("My spark app")
+      .set("spark.mesos.coarse", "false")
       .set("spark.executor.uri", "http://mesos-m1.c.amiable-might-155515.internal/spark-2.0.0-bin-hadoop2.7.tgz")
 
     val sc = new SparkContext(conf)
